@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Ubuntu, serif;
+    
+    background: linear-gradient(90deg,#ff145a 0%, #ff94cd 100%);
+    
+}
+
+
+/* начало анимации вылетающих стикеров*/
+.image-container {
+    width: 100%;
+    position: relative;
+    
+    height: 100vh;
+}
+
+.image {
+    position: absolute;
+    
+    width: 250px; /* Ширина изображения */
+    height: 250px; /* Высота изображения */
+    opacity: 0; /* Скрываем изображение до начала анимации */
+    transition: all 2s ease-in-out; /* Плавный переход */
+}
+/* медиа для картинки */
+@media (max-width:1200px){
+    .image{
+        display: none;
+    }
+    
+}
+/*  */
+
+.image-left{
+    filter: drop-shadow(5px 5px 10px #ffbde0);
+    
+}
+.image-right{
+    filter: drop-shadow(5px 5px 10px #ff0d8e);
+    
+}
+/* Изображения, вылетающие слева */
+
+.image-left-1 {
+    left: -100px;
+    top: 5%;
+    animation: moveToCenterLeft 2s 1s forwards;
+}
+
+.image-left-2 {
+    left: -100px;
+    top: 35%;
+    animation: moveToCenterLeft 2s 1.5s forwards;
+}
+
+.image-left-3 {
+    left: -100px;
+    top: 65%;
+    animation: moveToCenterLeft 2s 2s forwards;
+}
+
+/* Изображения, вылетающие справа */
+.image-right-1 {
+    right: -100px;
+    top: 5%;
+    animation: moveToCenterRight 2s 1s forwards;
+}
+
+.image-right-2 {
+    right: -100px;
+    top: 35%;
+    animation: moveToCenterRight 2s 1.5s forwards;
+}
+
+.image-right-3 {
+    right: -100px;
+    top: 65%;
+    animation: moveToCenterRight 2s 2s forwards;
+}
+
+@keyframes moveToCenterLeft {
+    to {
+        left: 5%; /* Конечная позиция для изображений слева */
+        opacity: 1;
+    }
+}
+
+@keyframes moveToCenterRight {
+    to {
+        right: 5%; /* Конечная позиция для изображений справа */
+        opacity: 1;
+    }
+} 
+/* конец анимации  */
+/* начало движения текста */
+
+.col-lg-10{
+    margin-top: 2em;
+    
+    
+}
+.nav-link{
+    color:aquamarine;
+
+}
+
+
+.inst{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+/* надпись тире инст лучшей девочки моей любимой */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    margin-top: 50px;
+}
+
+.link-image {
+    display: inline-block;
+    margin-left: 10px; 
+}
+/* конец надписи */
+ #display {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.nav-link{
+    color:aquamarine;
+
+}
+.julia-ava{
+    border-radius: 20%;
+    object-fit: cover; 
+}
+
+/*кнопка*/
+
+
+.nav-container {
+    width: 100%;
+    
+    background-color: rgb(33, 37, 41);
+    
+    
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.nav-item {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    
+    
+    animation: move 4s linear infinite alternate;
+}
+@keyframes move{
+    from{
+        transform: translateX(30%)
+    }
+    to{
+        transform: translateX(-30%);
+    }
+}
+
+
+/* poczatekgbwragaergaedfg */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font: 20px / 1.4 sans-serif;
+  }
+
+  .wrap {
+    max-width: 100%;
+    
+    
+  }
+  .items-wrap {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 20px;
+  }
+  .items-wrap:before,
+  .items-wrap:after {
+    content: "";
+    height: 100%;
+    top: 0;
+    width: 10%;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .items-wrap:before {
+    left: 0;
+    
+  }
+  .items-wrap:after {
+    right: 0;
+    
+  }
+  .items {
+    flex-shrink: 0;
+    display: flex;
+    gap: 20px;
+    
+    justify-content: space-around;
+    min-width: 100%;
+  }
+  .item {
+    background: #ccc;
+    flex: 0 0 auto;
+    width: 225px;
+    height: 225px;
+    
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    margin: 10px 0;
+    transition: all 0.1s ease-in-out;
+  }
+  .item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  
+  .marquee {
+    animation: scroll 20s linear infinite;
+  }
+  .reverce {
+    animation-direction: reverse;
+  }
+  .items-wrap:hover .marquee {
+    animation-play-state: paused;
+  }
+  
+  .perfscan {
+    margin: 20px 0;
+    text-align: center;
+    bottom: 0;
+    background: #fff;
+    padding: 5px;
+  }
+  
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 20px));
+    }
+  }
+  /* gWADGSASGGGGGGGGGGGGG */
+.love{
+    
+    
+    
+    background-color: rgb(33, 37, 41);;
+    color:aliceblue;
+    font-size: 48px;
+    font-weight: bolder;
+    
+}
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    
+    text-align: center;
+    color:aliceblue;
+    background-color: rgb(33, 37, 41);
+    padding: 20px;
+    
+   
+}
+.toggle-button {
+    
+    padding: 10px 15px;
+    border: none;
+    background-color: #ff145a;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+    background-color: #0056b3;
+}
+/*конец кнопки*/
+
+/*
+#left{
+    box-shadow: -10px 6px 10px 0px #206557;
+}
+#mid {
+    box-shadow: 0px 6px 10px 0px #206557;
+}
+
+#right {
+    box-shadow: 10px 6px 10px 0px #206557;
+}*/
+.navbar-nav .nav-link.active{
+    color:rgb(0, 118, 122);
+}
+.navbar-brand img{
+    width: 40px;
+}
+.navbar-toggler{
+    background-color: gray;
+}
+/* 
+
+.sidebar {
+    color:rgb(117, 15, 15);
+    font-size: 20px;
+    font-weight: 600;
+    background: linear-gradient(270deg, #0da578 0%, #7b9b90 101%);
+    
+}
+p{
+    color:rgb(117, 15, 15); 
+}
+.card{
+    background: linear-gradient(270deg, #0da578 0%, #7b9b90 101%);
+    color:rgb(117, 15, 15); 
+}
+
+.card a{
+    text-decoration: none;
+    color:rgb(117, 15, 15); 
+}*/
+ footer,
+.btn-outline-info{
+    
+    background: rgb(33, 37, 41);
+} 
+.slide-text, .footer-text{
+    color:aliceblue;
+    
+    font-weight: bolder;
+    margin: auto auto; 
+}
+
+.call-center{
+    animation: call 2s ease 0s infinite normal none;
+} /*
+@keyframes call {
+	0%,
+	100% {
+		transform: translateX(0%);
+		transform-origin: 50% 50%;
+	}
+
+	15% {
+		transform: translateX(-30px) rotate(-6deg);
+	}
+
+	30% {
+		transform: translateX(15px) rotate(6deg);
+	}
+
+	45% {
+		transform: translateX(-15px) rotate(-3.6deg);
+	}
+
+	60% {
+		transform: translateX(9px) rotate(2.4deg);
+	}
+
+	75% {
+		transform: translateX(-6px) rotate(-1.2deg);
+	}
+}
+
+@media (max-width: 755px){
+    .carousel-indicators{
+        display: none; 
+    }
+} */
